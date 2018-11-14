@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/gradientbackgroundlogin"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:tint="#fff"
+            android:src="@drawable/ic_person"
+            />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center|top"
+        >
+
+        <EditText
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User"
+            android:id="@+id/edit_usuario"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp"
+            android:hint="Password"
+            android:id="@+id/edit_password"
+            android:inputType="textPassword"
+            />
+
+        <Button
+            style="@style/AppTheme.button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="loginValidation"
+            android:text="Ingresar"
+            android:drawableRight="@drawable/ic_send"
+            android:drawablePadding="9dp"
+            android:drawableTint="#fff"
+            />
+    </LinearLayout>
+
+</LinearLayout>

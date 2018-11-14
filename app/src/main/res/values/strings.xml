@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">H2O</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <string name="history">HISTORIAL</string>
+    <string name="profile">PERFIL</string>
+    <string name="actual">ACTUAL</string>
+    <string name="jobs">TRABAJOS</string>
+
+    <string-array name="tabs">
+        <item>@string/history</item>
+        <item>@string/profile</item>
+        <item>@string/actual</item>
+        <item>@string/jobs</item>
+    </string-array>
+
+</resources>
