@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateView() {
+        obtenerSolicitudes();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -85,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (tabLayout != null) {
             tabLayout.setupWithViewPager(viewPager);
-
         }
     }
 
@@ -132,12 +132,13 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i <solicituds.size()-1 ; i++) {
             if(ActualFragment.solicitud.getId() ==solicituds.get(i).getId() ){
                 LoginActivity.usuarioActual.getSolicitudList().get(i).setState("Terminado");
+                listaSolicitud=(ArrayList<Solicitud>) LoginActivity.usuarioActual.getSolicitudList();
+                terminarSolicitud(ActualFragment.solicitud);
                 ActualFragment.solicitud= null;
-                terminarSolicitud(solicituds.get(i));
                 break;
             }
         }
-        
+
         updateView();
     }
 
@@ -157,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.i(TAG_SOLICITUDES, "Error: "+ error);
+                Log.i(TAG_SOLICITUDES, "Error: "+ error);//HOLA
             }
         }){
             @Override
@@ -169,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         queue.add(stringRequest);
+
     }
 
     public void agregarImagen(View view) {
