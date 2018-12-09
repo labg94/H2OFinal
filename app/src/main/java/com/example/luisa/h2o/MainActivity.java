@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Camera;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
@@ -119,8 +120,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         ImageView imageView = findViewById(R.id.fix_image);
-        if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(Bitmap.createScaledBitmap(bitmap,1138,640,true));
         } else {
@@ -177,8 +179,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void agregarImagen(View view) {
 
+
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, 2);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            Log.v("AgregarImagen", "Pide permisos");
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
+        } else {
+            Log.v("AgregarImagen", "va al intent");
+            if(intent.resolveActivity(getPackageManager()) !=null)
+            {
+                startActivityForResult(intent, 1);
+            }
+        }
+
+
+
+
+
     }
 
 
