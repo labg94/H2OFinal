@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:background="@drawable/gradientbackgroundlogin"
+        android:text="Precio sugerido" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:hint="Valor"
+        android:inputType="number" />
+
+    <TextView
+        android:layout_marginHorizontal="18dp"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nota: En caso de que el cliente acepte el precio, se le será asignado este trabajo" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        >
+        <Button
+            android:id="@+id/btn_cancelar_oferta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            style="@style/AppTheme.button"
+            android:layout_margin="5dp"
+            android:layout_weight="5"
+            />
+
+        <Button
+            android:id="@+id/btn_aceptar_oferta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            style="@style/AppTheme.button"
+            android:text="Aceptar"
+            android:layout_weight="5"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

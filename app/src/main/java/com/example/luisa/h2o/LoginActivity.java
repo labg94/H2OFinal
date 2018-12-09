@@ -50,8 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         String pass = editPass.getText().toString();
         boolean valido = false;
 
-
-        try {
             for (Usuario u : listaUsuario) {
                 if (u.getMail() != null) {
                     if (u.getMail().equalsIgnoreCase(usuario) && u.getPass().equals(pass)) {
@@ -66,16 +64,13 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
             }
-        } catch (Exception e) {
-            Log.i(TAG_USUARIOS, "Error del catch" + e.getMessage() );
-            Toast.makeText(this,"asegurese que tenga conexion a internet",Toast.LENGTH_LONG).show();
-        }
+
 
         if (valido) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
-            Toast.makeText(this, "Usuario y contraseña invalidos", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Usuario y contraseña invalidos", Toast.LENGTH_SHORT).show();
         }
 
 

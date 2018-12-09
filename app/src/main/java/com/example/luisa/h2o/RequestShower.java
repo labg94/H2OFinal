@@ -19,6 +19,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.RequestManager;
 import com.example.luisa.h2o.api.UsuarioServicio;
+import com.example.luisa.h2o.dialogo.ContraOferta;
 import com.example.luisa.h2o.model.Solicitud;
 import com.example.luisa.h2o.model.Usuario;
 import com.example.luisa.h2o.model.UsuarioRespuesta;
@@ -96,6 +97,18 @@ public class RequestShower extends AppCompatActivity {
     }
 
 
+
+
+    public  void contraOferta(View view){
+        ContraOferta oferta = new ContraOferta();
+
+        Bundle args = new Bundle();
+        args.putInt("id",id);
+        oferta.setArguments(args);
+        oferta.show(getSupportFragmentManager(),"RequestShower");
+    }
+
+
     public void agregarSolicitud(Usuario usuario,Solicitud solicitud){
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -130,8 +143,4 @@ public class RequestShower extends AppCompatActivity {
         onBackPressed();
     }
 
-//    public void goToMapsRequest(View view) {
-//        Intent intent = new Intent(this,MapsActivity.class);
-//        startActivity(intent);
-//    }
 }
