@@ -132,12 +132,25 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Terminado(View view) {
+        String TAG_TERMINADO= "terminado";
+        Log.i(TAG_TERMINADO,"termino la solicitud");
         ArrayList<Solicitud> solicituds = (ArrayList<Solicitud>) LoginActivity.usuarioActual.getSolicitudList();
-        for (int i = 0; i <solicituds.size()-1 ; i++) {
+
+        if (solicituds.size()==0) {
+            Log.i(TAG_TERMINADO,"solicitudes vacias");
+        }
+        for (int i = 0; i <solicituds.size() ; i++) {
             if(ActualFragment.solicitud.getId() ==solicituds.get(i).getId() ){
+                Log.i(TAG_TERMINADO,"id "+solicituds.get(i).getId());
                 LoginActivity.usuarioActual.getSolicitudList().get(i).setState("Terminado");
                 listaSolicitud=(ArrayList<Solicitud>) LoginActivity.usuarioActual.getSolicitudList();
-                terminarSolicitud(ActualFragment.solicitud);
+                try{
+                    terminarSolicitud(ActualFragment.solicitud);
+                    Log.i(TAG_TERMINADO,"termino la solicitud sin problemas ");
+                }catch(Exception e){
+                    Log.e(TAG_TERMINADO,"no logro terminar");
+                }
+
                 ActualFragment.solicitud= null;
                 break;
             }
@@ -192,10 +205,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1);
             }
         }
-
-
-
-
 
     }
 
