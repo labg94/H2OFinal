@@ -14,15 +14,14 @@
         android:background="@drawable/gradientbackgroundlogin"
         android:gravity="center"
         >
-
+        <!--android:tint="#fff"-->
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:tint="#fff"
-            android:src="@drawable/ic_person"
+            android:src="@drawable/logo"
             />
 
     </RelativeLayout>

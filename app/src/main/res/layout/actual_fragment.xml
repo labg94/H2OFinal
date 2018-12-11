@@ -196,11 +196,21 @@
                     android:onClick="agregarImagen"
                     android:text="Imagen" />
 
+                <!--<Button-->
+                    <!--android:id="@+id/btn_done"-->
+                    <!--style="@style/AppTheme.button"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:padding="16dp"-->
+                    <!--android:enabled="true"-->
+                    <!--android:onClick="Terminado"-->
+                    <!--android:text="Terminado" />-->
+
                 <Button
-                    android:id="@+id/btn_done"
+                    android:id="@+id/btn_done2"
                     style="@style/AppTheme.button"
                     android:layout_gravity="center"
                     android:padding="16dp"
+                    android:enabled="true"
                     android:onClick="Terminado"
                     android:text="Terminado" />
             </LinearLayout>

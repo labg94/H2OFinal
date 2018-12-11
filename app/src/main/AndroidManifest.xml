@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RequestShower" />
-        <activity android:name=".HistoryShower"></activity>
+        <activity android:name=".HistoryShower"/>
     </application>
 
 </manifest>
